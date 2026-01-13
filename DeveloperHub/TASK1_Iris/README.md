@@ -1,39 +1,39 @@
-# 📈 Short-Term Stock Price Prediction Using Machine Learning
+# 🌸 Iris Dataset Analysis & Visualization
 
 ## 📌 Project Overview
-This project focuses on **predicting the next day’s closing stock price** using historical market data.  
-The goal is to demonstrate how machine learning regression models can be applied to financial time-series data for **short-term forecasting**.
+This project explores the **classic Iris dataset**, one of the most well-known datasets in machine learning.  
+The aim is to **understand feature distributions, relationships, and outliers** through exploratory data analysis (EDA) and visualizations.
 
-Historical stock data is retrieved from **Yahoo Finance** using the `yfinance` Python library, and features such as **Open, High, Low, and Volume** are used to predict the **next day’s Close price**.
+This project is a fundamental exercise in **data exploration and visualization**, preparing the dataset for potential predictive modeling tasks.
 
 ---
 
 ## 🎯 Objective
-- Retrieve historical stock market data
-- Perform feature engineering for next-day prediction
-- Train a regression-based machine learning model
-- Evaluate model performance
-- Visualize actual vs predicted stock prices
+- Load and inspect the Iris dataset
+- Perform summary statistics and data exploration
+- Visualize feature distributions and relationships
+- Identify outliers and trends among the three Iris species
 
 ---
 
 ## 📊 Dataset
-- **Source:** Yahoo Finance  
-- **Library Used:** `yfinance`
-- **Stock Selected:** Apple Inc. (AAPL)
-- **Time Range:** 2018 – 2024
+- **Dataset Name:** Iris  
+- **Source:** Seaborn / UCI Machine Learning Repository  
+- **Samples:** 150  
+- **Features:** 4 numerical features + 1 categorical target  
+- **Target Variable:** `Species`  
+  - `Iris-setosa`
+  - `Iris-versicolor`
+  - `Iris-virginica`
 
-### Features Used
+### Features
 | Feature | Description |
-|------|------------|
-| Open | Opening price of the day |
-| High | Highest price of the day |
-| Low | Lowest price of the day |
-| Volume | Number of shares traded |
-| Close | Closing price (used to create target) |
-
-### Target Variable
-- **Next_Close:** Closing price of the following trading day
+|---------|------------|
+| SepalLengthCm | Sepal length in centimeters |
+| SepalWidthCm  | Sepal width in centimeters |
+| PetalLengthCm | Petal length in centimeters |
+| PetalWidthCm  | Petal width in centimeters |
+| Species       | Iris species (target variable) |
 
 ---
 
@@ -42,52 +42,40 @@ Historical stock data is retrieved from **Yahoo Finance** using the `yfinance` P
 - pandas
 - numpy
 - matplotlib
-- yfinance
-- scikit-learn
+- seaborn
 
 ---
 
-## 🧠 Machine Learning Models
-- **Linear Regression** (Primary model)
-- **Random Forest Regressor** (Optional enhancement)
+## 🔍 Project Workflow
+
+### 1️⃣ Data Loading & Inspection
+- Loaded dataset using `pandas`
+- Explored dataset using `.info()`, `.head()`, and `.describe()`
+- Checked for missing values and data types
 
 ---
 
-## ⚙️ Methodology
-1. Download historical stock data using Yahoo Finance
-2. Select relevant financial features
-3. Shift closing price to create next-day prediction target
-4. Split data into training and testing sets (time-series aware)
-5. Train regression model
-6. Evaluate model performance
-7. Visualize actual vs predicted prices
+### 2️⃣ Exploratory Data Analysis (EDA)
+- Feature distributions using **histograms**
+- Outlier detection using **box plots**
+- Feature relationships using **scatter plots**
+- Summary statistics to understand central tendencies and variability
 
 ---
 
-## 📈 Model Evaluation Metrics
-The model is evaluated using:
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- R² Score
-
-These metrics help assess prediction accuracy and model reliability.
+### 3️⃣ Visualizations
+- **Scatter plots:** Visualize relationships between features (e.g., SepalLength vs PetalLength)
+- **Histograms:** Show distribution of each feature
+- **Box plots:** Detect outliers and compare feature ranges across species
+- **Color-coded plots by species** to highlight separability
 
 ---
 
-## 📉 Visualization
-A line plot is used to compare:
-- **Actual closing prices**
-- **Predicted closing prices**
-
-This visualization helps understand how closely the model follows real market trends.
-
----
-
-## 🔍 Key Observations
-- Short-term price movements can be reasonably approximated using intraday features
-- High and Low prices tend to have the strongest influence on next-day closing prices
-- Linear Regression provides a simple and interpretable baseline model
+## 📈 Key Insights
+- **Petal features** (length and width) clearly separate *Iris-setosa* from other species
+- **Sepal features** show more overlap between species
+- Some outliers exist in SepalWidth, but overall data is clean
+- Feature relationships indicate which variables are more useful for classification tasks
 
 ---
 
@@ -95,4 +83,4 @@ This visualization helps understand how closely the model follows real market tr
 
 ### 1️⃣ Install Dependencies
 ```bash
-pip install yfinance pandas numpy matplotlib scikit-learn
+pip install pandas numpy matplotlib seaborn
